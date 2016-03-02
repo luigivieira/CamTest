@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resources/full-screen.png</file>
+        <file>resources/system-help.png</file>
+        <file>resources/camera-web-off.png</file>
+        <file>resources/camera-web-on.png</file>
+        <file>resources/on-top.png</file>
+    </qresource>
+</RCC>
