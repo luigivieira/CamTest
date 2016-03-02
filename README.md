@@ -13,11 +13,11 @@ The application has been developed and tested with:
 ## Building
 
 1. Use CMake to configure and generate the environment. I suggest using the folder `build`, since it is the one ignored by gitignore.
-2. In Windows, open the Visual Studio solution and build as desired (debug, release, etc).
+2. In Windows, open the Visual Studio solution and build as desired (*debug*, *release*, etc).
 3. In Linux, use type `make` to let the Makefile produce the binary.
-4. The code produces only a single executable named CamTest(.exe), that depends on Qt and OpenCV dynamic libraries.
+4. The code produces only a single executable named `CamTest(.exe)`, that depends on Qt and OpenCV dynamic libraries.
 
-In case of difficulties generating the environment with CMake, verify if the environment variables are correctly set (OpenCV_DIR and QT5<Module>_DIR) and consult the documentation:
+In case of difficulties generating the environment with CMake, verify if the environment variables are correctly set (`OpenCV_DIR` and `QT5<Module>_DIR`) and consult the documentation:
 
 - [Qt5 CMake Manual](http://doc.qt.io/qt-5/cmake-manual.html)
 - [Using OpenCV with gcc and CMake](http://docs.opencv.org/2.4/doc/tutorials/introduction/linux_gcc_cmake/linux_gcc_cmake.html)
