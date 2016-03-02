@@ -18,6 +18,7 @@
  
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "aboutwindow.h"
 
 #include <QMessageBox>
 #include <QPixmap>
@@ -98,6 +99,12 @@ void ct::MainWindow::on_actionFullScreen_toggled(bool bChecked)
 		setWindowState(windowState() | Qt::WindowFullScreen);
 	else
 		setWindowState(windowState() ^ Qt::WindowFullScreen);
+}
+
+// +-----------------------------------------------------------
+void ct::MainWindow::on_actionAbout_triggered()
+{
+    (new AboutWindow(this))->show();
 }
 
 // +-----------------------------------------------------------

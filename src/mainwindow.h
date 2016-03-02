@@ -66,6 +66,11 @@ namespace ct
 		 * @param bChecked Boolean with the checked state.
 		 */
 		void on_actionFullScreen_toggled(bool bChecked);
+        
+        /**
+		 * Slot for the triggering of the action About.
+		 */
+		void on_actionAbout_triggered();
 
 		/**
 		 * Slot for the triggering of the action Exit.

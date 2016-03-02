@@ -24,6 +24,6 @@ In case of difficulties generating the environment with CMake, verify if the env
 
 ## Credits
 
-Created by [Luiz Carlos Vieira](http://www.luiz.vieira.nom.br) in 2016 and made available under GPL.
+Copyright (C) 2016 [Luiz Carlos Vieira](http://www.luiz.vieira.nom.br). Available under GPL (see details in the license file).
 
-The application icons are either from or based on the Oxygen Icons Set, downloaded as [PNGs from Felipe Azevedo (pasnox)](https://github.com/pasnox/oxygen-icons-png) and [licensed under LGPL from KDE](https://techbase.kde.org/Projects/Oxygen/Licensing).
+The icons used by the application are either from or based on the Oxygen Icons Set, downloaded as [PNGs from Felipe Azevedo (pasnox)](https://github.com/pasnox/oxygen-icons-png) and [licensed under LGPL from KDE](https://techbase.kde.org/Projects/Oxygen/Licensing).

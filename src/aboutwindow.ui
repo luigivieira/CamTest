@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AboutWindow</class>
+ <widget class="QDialog" name="AboutWindow">
+  <property name="windowModality">
+   <enum>Qt::ApplicationModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>462</width>
+    <height>302</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>About...</string>
+  </property>
+  <property name="locale">
+   <locale language="English" country="UnitedKingdom"/>
+  </property>
+  <property name="sizeGripEnabled">
+   <bool>false</bool>
+  </property>
+  <property name="modal">
+   <bool>true</bool>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>441</width>
+     <height>261</height>
+    </rect>
+   </property>
+   <property name="locale">
+    <locale language="English" country="UnitedKingdom"/>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;CamTest - A simple webcam application&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;Copyright (C) 2016 &lt;a href=&quot;http://www.luiz.vieira.nom.br/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Luiz Carlos Vieira&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;This is a simple webcam application mainly used to test the installation and building of Qt and OpenCV both in Windows and Linux - but I suppose it also works as a testing tool for webcams. :)&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;The application icons are either from or based on the Oxygen Icons Set, downloaded as &lt;a href=&quot;https://github.com/pasnox/oxygen-icons-png&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;PNGs from Felipe Azevedo (pasnox)&lt;/span&gt;&lt;/a&gt; and &lt;a href=&quot;https://techbase.kde.org/Projects/Oxygen/Licensing&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;licensed under LGPL from KDE&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;LICENSE&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.&lt;/p&gt;&lt;p&gt;This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;You should have received a copy of the GNU General Public License along with this program.  If not, see &lt;a href=&quot;http://www.gnu.org/licenses/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.gnu.org/licenses/&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignJustify|Qt::AlignVCenter</set>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+   <property name="openExternalLinks">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="closeButton">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>270</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="locale">
+    <locale language="English" country="UnitedKingdom"/>
+   </property>
+   <property name="text">
+    <string>&amp;Close</string>
+   </property>
+   <property name="default">
+    <bool>true</bool>
+   </property>
+   <property name="flat">
+    <bool>false</bool>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>closeButton</sender>
+   <signal>clicked()</signal>
+   <receiver>AboutWindow</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>317</x>
+     <y>201</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>227</x>
+     <y>140</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
