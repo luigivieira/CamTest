@@ -18,13 +18,19 @@
 
 #include "aboutwindow.h"
 #include "ui_aboutwindow.h"
+#include "version.h"
 
 // +-----------------------------------------------------------
-ct::AboutWindow::AboutWindow(QWidget *pParent) : QDialog(pParent), ui(new Ui::AboutWindow)
+ct::AboutWindow::AboutWindow(QWidget *pParent) :
+	QDialog(pParent, Qt::WindowSystemMenuHint | Qt::WindowTitleHint),
+	ui(new Ui::AboutWindow)
 {
     ui->setupUi(this);
 	setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
 	setFixedSize(width(), height());
+
+	QString sText = ui->label->text();
+	ui->label->setText(sText.arg(CT_VERSION));
 }
 
 // +-----------------------------------------------------------

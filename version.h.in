@@ -16,7 +16,7 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#define FSDK_VERSION_MAJOR @FSDK_VERSION_MAJOR@
-#define FSDK_VERSION_MINOR @FSDK_VERSION_MINOR@
-#define FSDK_VERSION_PATCH @FSDK_VERSION_PATCH@
-#define FSDK_VERSION "@FSDK_VERSION@"
+#define CT_VERSION_MAJOR @CT_VERSION_MAJOR@
+#define CT_VERSION_MINOR @CT_VERSION_MINOR@
+#define CT_VERSION_PATCH @CT_VERSION_PATCH@
+#define CT_VERSION "@CT_VERSION@"
