@@ -20,6 +20,8 @@
 #include "ui_aboutwindow.h"
 #include "version.h"
 
+#include <QScrollArea>
+
 // +-----------------------------------------------------------
 ct::AboutWindow::AboutWindow(QWidget *pParent) :
 	QDialog(pParent, Qt::WindowSystemMenuHint | Qt::WindowTitleHint),
@@ -31,6 +33,8 @@ ct::AboutWindow::AboutWindow(QWidget *pParent) :
 
 	QString sText = ui->label->text();
 	ui->label->setText(sText.arg(CT_VERSION));
+	ui->label->adjustSize();
+	ui->label->setMaximumWidth(435);
 }
 
 // +-----------------------------------------------------------
