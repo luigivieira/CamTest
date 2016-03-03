@@ -20,9 +20,12 @@
 #include "ui_mainwindow.h"
 #include "aboutwindow.h"
 
+#include <QApplication>
+#include <QDesktopWidget>
 #include <QMessageBox>
 #include <QPixmap>
 #include <QDebug>
+#include <QResizeEvent>
 
 using namespace std;
 using namespace cv;
@@ -53,6 +56,18 @@ ct::MainWindow::MainWindow(QWidget *pParent) :
 ct::MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+// +-----------------------------------------------------------
+void ct::MainWindow::showEvent(QShowEvent *pEvent)
+{
+	QMainWindow::showEvent(pEvent);
+	setMinimumSize(10, 10);
+	resize(600, 480);
+	QRect oGeo = QApplication::desktop()->screenGeometry();
+	int x = (oGeo.width() - width()) / 2;
+	int y = (oGeo.height() - height()) / 2;
+	move(x, y);
 }
 
 // +-----------------------------------------------------------

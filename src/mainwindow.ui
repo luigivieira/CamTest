@@ -6,17 +6,20 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>388</width>
-    <height>296</height>
+    <width>225</width>
+    <height>135</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Camera Testing Tool</string>
   </property>
-  <property name="autoFillBackground">
-   <bool>false</bool>
-  </property>
   <widget class="QWidget" name="centralWidget">
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="locale">
+    <locale language="English" country="UnitedKingdom"/>
+   </property>
    <layout class="QGridLayout" name="gridLayout">
     <property name="leftMargin">
      <number>0</number>
@@ -30,6 +33,9 @@
     <property name="bottomMargin">
      <number>0</number>
     </property>
+    <property name="spacing">
+     <number>0</number>
+    </property>
     <item row="0" column="0">
      <widget class="QLabel" name="imageLabel">
       <property name="locale">
@@ -37,6 +43,9 @@
       </property>
       <property name="text">
        <string/>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
       </property>
      </widget>
     </item>
@@ -47,7 +56,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>388</width>
+     <width>225</width>
      <height>21</height>
     </rect>
    </property>

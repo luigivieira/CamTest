@@ -48,6 +48,14 @@ namespace ct
          */
         virtual ~MainWindow();
 
+	protected:
+
+		/**
+		 * Capture the show event.
+		 * @param pEvent Instance of a QShowEvent with the event data.
+		 */
+		void showEvent(QShowEvent *pEvent) Q_DECL_OVERRIDE;
+
 	private slots:
 		/**
 		 * Slot for the toggling of the action Camera On/Off.
