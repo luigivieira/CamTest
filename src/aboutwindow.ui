@@ -13,20 +13,11 @@
     <height>268</height>
    </rect>
   </property>
-  <property name="sizePolicy">
-   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-    <horstretch>0</horstretch>
-    <verstretch>0</verstretch>
-   </sizepolicy>
-  </property>
   <property name="windowTitle">
    <string>About...</string>
   </property>
   <property name="locale">
    <locale language="English" country="UnitedKingdom"/>
-  </property>
-  <property name="sizeGripEnabled">
-   <bool>false</bool>
   </property>
   <property name="modal">
    <bool>true</bool>
@@ -53,19 +44,6 @@
       <number>10</number>
      </property>
      <item>
-      <widget class="QLabel" name="titleLabel">
-       <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;CamTest - A simple webcam application (version %1)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Copyright (C) 2016 &lt;a href=&quot;\&amp;quot;http://www.luiz.vieira.nom.br/\&amp;quot;&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Luiz Carlos Vieira&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;This is a simple webcam application mainly used to test the installation and building of Qt and OpenCV both in Windows and Linux - but I suppose it also works as a testing tool for webcams. :)&lt;/p&gt;&lt;p&gt;The application icons are either from or based on the Oxygen Icons Set, downloaded as &lt;a href=&quot;\&amp;quot;https://github.com/pasnox/oxygen-icons-png\&amp;quot;&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;PNGs from Felipe Azevedo (pasnox)&lt;/span&gt;&lt;/a&gt; and &lt;a href=&quot;\&amp;quot;https://techbase.kde.org/Projects/Oxygen/Licensing\&amp;quot;&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;licensed under LGPL from KDE&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
-       <property name="wordWrap">
-        <bool>true</bool>
-       </property>
-       <property name="openExternalLinks">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item>
       <widget class="QScrollArea" name="scrollArea">
        <property name="widgetResizable">
         <bool>true</bool>
@@ -76,7 +54,7 @@
           <x>0</x>
           <y>0</y>
           <width>394</width>
-          <height>166</height>
+          <height>318</height>
          </rect>
         </property>
         <layout class="QGridLayout" name="gridLayout">
@@ -96,9 +74,9 @@
           <number>0</number>
          </property>
          <item row="0" column="0">
-          <widget class="QLabel" name="licenseLabel">
+          <widget class="QLabel" name="label">
            <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;LICENSE&lt;/p&gt;&lt;p&gt;This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.&lt;/p&gt;&lt;p&gt;This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.&lt;/p&gt;&lt;p&gt;You should have received a copy of the GNU General Public License along with this program. If not, see &lt;a href=&quot;\&amp;quot;http://www.gnu.org/licenses/\&amp;quot;&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.gnu.org/licenses/&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;CamTest - A simple webcam application (version %1)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Copyright (C) 2016 &lt;a href=&quot;\&amp;quot;http://www.luiz.vieira.nom.br/\&amp;quot;&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Luiz Carlos Vieira&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;This is a simple webcam application mainly used to test the installation and building of Qt and OpenCV both in Windows and Linux - but I suppose it also works as a testing tool for webcams. :)&lt;/p&gt;&lt;p&gt;The application icons are either from or based on the Oxygen Icons Set, downloaded as &lt;a href=&quot;\&amp;quot;https://github.com/pasnox/oxygen-icons-png\&amp;quot;&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;PNGs from Felipe Azevedo (pasnox)&lt;/span&gt;&lt;/a&gt; and &lt;a href=&quot;\&amp;quot;https://techbase.kde.org/Projects/Oxygen/Licensing\&amp;quot;&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;licensed under LGPL from KDE&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;LICENSE&lt;/p&gt;&lt;p&gt;This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.&lt;/p&gt;&lt;p&gt;This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.&lt;/p&gt;&lt;p&gt;You should have received a copy of the GNU General Public License along with this program. If not, see &lt;a href=&quot;\&amp;quot;http://www.gnu.org/licenses/\&amp;quot;&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.gnu.org/licenses/&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>

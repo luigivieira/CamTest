@@ -29,7 +29,9 @@ ct::AboutWindow::AboutWindow(QWidget *pParent) :
 	ui(new Ui::AboutWindow)
 {
     ui->setupUi(this);
-	ui->titleLabel->setText(ui->titleLabel->text().arg(CT_VERSION));
+	ui->label->setText(ui->label->text().arg(CT_VERSION));
+	ui->label->setOpenExternalLinks(true);
+	setFixedSize(425, 268);
 }
 
 // +-----------------------------------------------------------
