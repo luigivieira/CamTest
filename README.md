@@ -2,6 +2,8 @@
 
 This is a simple webcam application mainly used to test the installation and building of Qt and OpenCV both in Windows and Linux - but I suppose it also works as a testing tool for webcams. :)
 
+![Screenshot](screenshot.png)
+
 ## Dependences
 
 The application has been developed and tested with:
