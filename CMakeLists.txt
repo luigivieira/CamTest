@@ -61,6 +61,8 @@ if(WIN32)
 else()
     add_executable(CamTest ${SRC} ${RSC})
 endif()
+set_target_properties(CamTest PROPERTIES OUTPUT_NAME camtest)
+set_target_properties(CamTest PROPERTIES OUTPUT_NAME_DEBUG camtestd)
 
 # Set up the required libraries
 target_link_libraries(CamTest Qt5::Widgets)
