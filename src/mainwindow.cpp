@@ -26,6 +26,7 @@
 #include <QPixmap>
 #include <QDebug>
 #include <QResizeEvent>
+#include <QDesktopServices>
 
 using namespace std;
 using namespace cv;
@@ -114,6 +115,12 @@ void ct::MainWindow::on_actionFullScreen_toggled(bool bChecked)
 		setWindowState(windowState() | Qt::WindowFullScreen);
 	else
 		setWindowState(windowState() ^ Qt::WindowFullScreen);
+}
+
+// +-----------------------------------------------------------
+void ct::MainWindow::on_actionProjectDocs_triggered()
+{
+	QDesktopServices::openUrl(QUrl("https://github.com/luigivieira/CamTest"));
 }
 
 // +-----------------------------------------------------------
