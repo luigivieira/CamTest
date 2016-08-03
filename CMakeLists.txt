@@ -15,13 +15,13 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-# Minimum CMake version required 
-cmake_minimum_required(VERSION 2.8.11)
-
-# Project information
+cmake_minimum_required(VERSION 3.1.0)
 project (CamTest)
 
-# Version data and header file
+#############################################
+# Configuring
+#############################################
+
 set (CT_VERSION_MAJOR 1)
 set (CT_VERSION_MINOR 0)
 set (CT_VERSION_PATCH 0)
@@ -31,31 +31,29 @@ configure_file (
   "${PROJECT_BINARY_DIR}/version.h"
 )
 include_directories("${PROJECT_BINARY_DIR}")
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
-# Default build type if none was specified
 if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
   set(CMAKE_BUILD_TYPE Release CACHE STRING "Choose the type of build." FORCE)
-  # Set the possible values of build type for cmake-gui
   set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS "Debug" "Release"
     "MinSizeRel" "RelWithDebInfo")
 endif()
 
-# Qt configuration
-set(CMAKE_INCLUDE_CURRENT_DIR ON) # Find includes in corresponding build directories
-set(CMAKE_AUTOMOC ON) # Instruct CMake to run moc automatically when needed
-set(CMAKE_AUTORCC ON) # Instruct CMake to run rcc automatically when needed
-set(CMAKE_AUTOUIC ON) # Instruct CMake to run uic automatically when needed
-find_package(Qt5Widgets REQUIRED)
+# Qt5
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
+set(CMAKE_AUTOUIC ON)
+find_package(Qt5 REQUIRED Core Gui Widgets)
 
-# OpenCV configuration
-find_package(OpenCV REQUIRED)
+# OpenCV
+find_package(OpenCV REQUIRED core highgui imgproc)
 include_directories(${OpenCV_INCLUDE_DIRS})
 
-# Add all source and resource files
+# Source files
 file(GLOB SRC src/*.cpp src/*.h)
 file(GLOB RSC src/*.qrc)
 
-# Add the executable
+# Executable
 if(WIN32)
     add_executable(CamTest WIN32 ${SRC} ${RSC})
 else()
@@ -64,6 +62,71 @@ endif()
 set_target_properties(CamTest PROPERTIES OUTPUT_NAME camtest)
 set_target_properties(CamTest PROPERTIES OUTPUT_NAME_DEBUG camtestd)
 
-# Set up the required libraries
-target_link_libraries(CamTest Qt5::Widgets)
-target_link_libraries(CamTest ${OpenCV_LIBS})
+# Libraries
+list(APPEND Qt5_LIBS Qt5::Core Qt5::Gui Qt5::Widgets)
+target_link_libraries(CamTest ${Qt5_LIBS} ${OpenCV_LIBS})
+
+#############################################
+# Installing (only for Release)
+#############################################
+
+get_filename_component(QT_BIN_DIR "${Qt5_DIR}/../../../bin" ABSOLUTE)
+get_filename_component(QT_PLUGIN_DIR "${Qt5_DIR}/../../../plugins" ABSOLUTE)
+
+# Executable
+install(TARGETS CamTest DESTINATION bin CONFIGURATIONS Release)
+
+# Qt5 dependencies
+foreach(LIB_TARGET ${Qt5_LIBS})
+	get_target_property(LIB_FILE ${LIB_TARGET} LOCATION_RELEASE)
+	install(FILES ${LIB_FILE} DESTINATION bin CONFIGURATIONS Release)
+endforeach()
+
+foreach(LIB_TARGET ${Qt5Gui_PLUGINS})
+	get_target_property(LIB_FILE ${LIB_TARGET} LOCATION_RELEASE)
+	get_filename_component(PLUGIN_NAME ${LIB_FILE} DIRECTORY)
+	string(REGEX REPLACE ".*/plugins/" "" PLUGIN_NAME ${PLUGIN_NAME})
+	install(FILES ${LIB_FILE} DESTINATION bin/${PLUGIN_NAME} CONFIGURATIONS Release)
+endforeach()
+   
+# OpenCV dependencies
+foreach(LIB_TARGET ${OpenCV_LIBS})
+	get_target_property(LIB_FILE ${LIB_TARGET} LOCATION_RELEASE)
+	install(FILES ${LIB_FILE} DESTINATION bin CONFIGURATIONS Release)
+endforeach()
+   
+# Windows 10 C Runtime dependencies
+if(WIN32)
+	macro(get_WIN32_VERSION version)
+		if(CMAKE_SYSTEM)
+			set(ver ${CMAKE_SYSTEM})
+			string(REGEX REPLACE "Windows[- ]" "" ver ${ver})
+			string(REGEX REPLACE "[.].*" "" ver ${ver})
+			set(${version} "${ver}")
+		endif()
+	endmacro()
+
+	get_WIN32_VERSION(WIN_VERSION)
+	if(${WIN_VERSION} EQUAL "10")
+		set(WIN10_CRT_REDIST_DIR "C:/Program Files (x86)/Windows Kits/10/Redist/ucrt/DLLs/x86" CACHE STRING "Path of the Windows 10 Universal C Runtime DLLs.")
+		file(GLOB CRT_DEPENDENCIES "${WIN10_CRT_REDIST_DIR}/*.dll")
+		install(FILES ${CRT_DEPENDENCIES} DESTINATION bin CONFIGURATIONS Release)
+	endif()
+endif()
+
+# Other system dependencies (i.e. VS redist in Windows)
+set(CMAKE_INSTALL_SYSTEM_RUNTIME_LIBS_SKIP 1)
+include(InstallRequiredSystemLibraries)
+install(FILES ${CMAKE_INSTALL_SYSTEM_RUNTIME_LIBS} DESTINATION bin CONFIGURATIONS Release)
+
+#############################################
+# Packaging
+#############################################
+
+set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "CamTest - A simple webcam application")
+set(CPACK_PACKAGE_VENDOR "Luiz Carlos Vieira (http://www.luiz.vieira.nom.br)")
+set(CPACK_PACKAGE_DESCRIPTION_FILE "${CMAKE_CURRENT_SOURCE_DIR}/README.md")
+set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/LICENSE")
+set(CPACK_PACKAGE_VERSION "${CT_VERSION}")
+set(CPACK_PACKAGE_INSTALL_DIRECTORY "CamTest ${CT_VERSION}")
+include(CPack)
