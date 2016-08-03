@@ -8,9 +8,9 @@ This is a simple webcam application mainly used to test the installation and bui
 
 The application has been developed and tested with:
 
-- Qt 5.5.1 32-bit
-- OpenCV 3.1.0 32-bit
-- CMake 3.5.0-rc3
+- Qt 5.7.0 32-bit
+- OpenCV 2.4.13 32-bit
+- CMake 3.5.1
 
 ## Building
 
@@ -18,6 +18,7 @@ The application has been developed and tested with:
 2. In Windows, open the Visual Studio solution and build as desired (*debug*, *release*, etc).
 3. In Linux, use type `make` to let the Makefile produce the binary.
 4. The code produces only a single executable named `camtest(.exe)`, that depends on Qt and OpenCV dynamic libraries.
+5. The CMake script also allows for installing and packaging.
 
 In case of difficulties generating the environment with CMake, verify if the environment variables are correctly set (`OpenCV_DIR` and `QT5<Module>_DIR`) and consult the documentation:
 
